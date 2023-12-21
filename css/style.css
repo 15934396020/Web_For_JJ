@@ -29,6 +29,54 @@ body {
   width: 80vw;
   margin: 0 auto;
 }
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  text-align: center;
+}
+
+.loader img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.progress-bar-container {
+  width: 200px;
+  height: 10px;
+  background: #555;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    animation: fillProgressBar 2s ease forwards;
+}
+
+@keyframes fillProgressBar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
 .header {
   height: 100px;
   line-height: 100px;
@@ -52,12 +100,14 @@ body {
   height: 100%;
   display: flex;
   justify-content: space-evenly;
+  margin: 0;
 }
 .header ul a {
   width: fit-content;
   min-width: 10%;
   height: 100%;
   text-align: center;
+  vertical-align: middle;
   font-weight: bold;
   font-size: 18px;
   color: #fff;
