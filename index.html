@@ -6,11 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="css/style.css">
-
+	<!-- 引入 Bootstrap 的 CSS 文件 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- 引入自己编写的 CSS 文件 -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- 引入自己编写的 js 脚本 -->
+	<script src="js/load.js" defer></script>
 </head>
 
 <body>
+	<div class="loader-container" id="loader-container">
+    <div class="loader">
+      <img src="images/logo-icon.svg" alt="Logo">
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+    </div>
+  </div>
     <div class="header w">
         <div class="logo">
             <img src="./images/logo.jpg" alt="JJLIN的logo">
@@ -26,8 +42,8 @@
         <div class="header_r">
 			<ul>
 				<li><img src="./images/gwc.jpg" alt="购物车"></li>
-				<li><a href="./login.html" ><button>登入</button></a></li>
-				<li><a href="./register.html" ><button class="zc">注册</button></a></li>
+				<li><a href="./login.html" ><button type="button" class="btn btn-primary">登入</button></a></li>
+				<li><a href="./register.html" ><button type="button" class="btn btn-primary zc">注册</button></a></li>
             	<ul class="header_ul">
 					<li>繁</li>
             		<li>/</li>
