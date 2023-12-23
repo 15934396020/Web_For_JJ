@@ -31,6 +31,10 @@ function setFontSize() {
 	document.querySelectorAll('.shop_center p').forEach(function (element) {
       element.style.fontSize = '6px'; // Adjust the font size for small screens
     });
+	// Page button -- smaller font size
+	document.querySelectorAll('.fy li').forEach(function (element) {
+      element.style.fontSize = '6px'; // Adjust the font size for small screens
+    });
   } else if (screenWidth < 992) { // Medium screens
     document.querySelectorAll('h3, .bio_li_r span').forEach(function (element) {
       element.style.fontSize = '18px'; // Adjust the font size for medium screens
@@ -54,6 +58,10 @@ function setFontSize() {
 	document.querySelectorAll('.shop_center p').forEach(function (element) {
       element.style.fontSize = '12px'; // Adjust the font size for small screens
     });
+	// Page button -- smaller font size
+	document.querySelectorAll('.fy li').forEach(function (element) {
+      element.style.fontSize = '10px'; // Adjust the font size for small screens
+    });
   } else { // Large screens
     document.querySelectorAll('h3, .bio_li_r span').forEach(function (element) {
       element.style.fontSize = '28px'; // Adjust the font size for large screens
@@ -72,6 +80,10 @@ function setFontSize() {
       element.style.fontSize = '18px'; // Adjust the font size for small screens
     });
 	document.querySelectorAll('.shop_center p').forEach(function (element) {
+      element.style.fontSize = '18px'; // Adjust the font size for small screens
+    });
+	// Page button -- smaller font size
+	document.querySelectorAll('.fy li').forEach(function (element) {
       element.style.fontSize = '18px'; // Adjust the font size for small screens
     });
   }

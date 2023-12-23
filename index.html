@@ -17,6 +17,7 @@
 	<!-- 引入自己编写的 js 脚本 -->
 	<script src="js/load.js"></script>
 	<script src="js/layout_setting.js"></script>
+	<script src="js/dynamic_contents.js"></script>
 </head>
 
 <body>
@@ -74,77 +75,13 @@
         </ul>
     </div>
     <div class="center w">
-        <ul>
-            <li>
-                <div class="img">
-                    <img src="./images/center1.jpg" class="img-responsive" alt="JJ彩排照片">
-                </div>
-                <div class="center_r">
-                    <h3>
-                        JJ20咸陽站彩排回顧!JJ20 Xianyang Rehearsals!#roadtoJJ20 #JJ20WorldTour #throwback</h3>
-                    <p><span>社群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>2023 - 10 - 30&nbsp;&nbsp;&nbsp;&nbsp;
-                        12:01</p>
-                </div>
-            </li>
-            <li>
-                <div class="img">
-                    <img src="./images/center2.jpg" class="img-responsive" alt="JJ与其他音乐人合作">
-                </div>
-                <div class="center_r">
-                    <h3>
-
-                        Proud of you my brother @troylaureta! Happy to be featuring my very first song in Filipino,
-                        “Hanggang” in the album, Dalamhati , launching……</h3>
-                    <p><span>社群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>2023 - 10 - 30&nbsp;&nbsp;&nbsp;&nbsp;
-                        12:01</p>
-                </div>
-            </li>
-            <li>
-                <div class="img">
-                    <img src="./images/center3.jpg" class="img-responsive" alt="JJ生活照">
-                </div>
-                <div class="center_r">
-                    <h3>Thank you LA.</h3>
-                    <p><span>社群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>2023 - 10 - 30&nbsp;&nbsp;&nbsp;&nbsp;
-                        12:01</p>
-                </div>
-            </li>
-            <li>
-                <div class="img">
-                    <img src="./images/center4.jpg" class="img-responsive" alt="JJ在录音室">
-                </div>
-                <div class="center_r">
-                    <h3>Vibin'</h3>
-                    <p><span>社群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>2023 - 10 - 30&nbsp;&nbsp;&nbsp;&nbsp;
-                        12:01</p>
-                </div>
-            </li>
-            <li>
-                <div class="img">
-                    <img src="./images/center5.jpg" class="img-responsive" alt="JJMV花絮">
-                </div>
-                <div class="center_r">
-                    <h3>
-                        帶你一探此次 MV 拍攝的過程林俊傑 JJ Lin 《一時的選擇》 MV 幕後花絮與你分享!First we make choices, then the choices make us.Go
-                        behind the scen</h3>
-                    <p><span>社群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>2023 - 10 - 30&nbsp;&nbsp;&nbsp;&nbsp;
-                        12:01</p>
-                </div>
-            </li>
+        <ul id="news_contents">
+            <!-- 由 js 动态生成 -->
         </ul>
     </div>
     <div class="fy w">
-        <ul>
-            <li>&lt;</li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>···</li>
-            <li>652</li>
-            <li>&gt;</li>
+        <ul id="paging">
+            <!-- 由 js 动态生成 -->
         </ul>
     </div>
     <div class="footer w">

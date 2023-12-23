@@ -415,6 +415,7 @@ body {
 .center ul li .center_r p span {
   font-weight: bold;
 }
+/* 翻页栏样式 */
 .fy {
   height: 40px;
   line-height: 40px;
@@ -439,6 +440,62 @@ body {
   background-color: #9e56ff;
   cursor: pointer;
 }
+/* 平板端翻页栏调整 */
+@media (max-width : 1200px) {
+	.fy {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 100px;
+}
+.fy ul {
+  width: 700px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.fy ul li {
+  width: 40px;
+  height: 40px;
+  background-color: #31313a;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+.fy ul li:hover {
+  background-color: #9e56ff;
+  cursor: pointer;
+}
+}
+/* ==== End of Adjustment ==== */
+/* 手机端翻页栏调整 */
+@media (max-width : 600px) {
+	.fy {
+  height: 15px;
+  line-height: 15px;
+  margin-top: 40px;
+}
+.fy ul {
+  width: 140px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.fy ul li {
+  width: 10px;
+  height: 15px;
+  background-color: #31313a;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+.fy ul li:hover {
+  background-color: #9e56ff;
+  cursor: pointer;
+}
+}
+/* ==== End of Adjustment ==== */
 /* 尾注区域 */
 .footer {
   margin-top: 70px;
