@@ -1,67 +1,57 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <!-- 引入 Bootstrap 的 CSS 文件 -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<!-- 引入自己编写的 CSS 文件 -->
-	<link rel="stylesheet" href="css/style.css">
-	<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<!-- 引入自己编写的 js 脚本 -->
-	<script src="js/layout_setting.js"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<!-- 引入 Bootstrap 的 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- 引入自己编写的 CSS 文件 -->
+<link rel="stylesheet" href="css/style.css">
+<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js --> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<!-- 引入自己编写的 js 脚本 --> 
+<script src="js/layout_setting.js"></script> 
+<script src="js/register.js"></script>
 </head>
 
 <body>
-	<div class="login_background">
-		<div class="center_logo">
-        	<img src="./images/logo.jpg" alt="JJLIN的logo">
-    	</div>
-		<div class="login_back">
-			<div class="login">
-				<div class="login_welcome">
-					<h3>歡迎註冊JJLin</h3>
-					<p>大家庭有你的陪伴更精彩！</p>
-				</div>
-				<div class="email_box">
-					<div class="cp-select">
-						<div class="ipt-box">
-							<span>+86</span>
-							<i class="icon"></i>
-						</div>
-						<div class="item-box"></div>
-					</div>
-					<input type="text" placeholder="請輸入手機號">
-				</div>
-				<div class="reg_code">
-					<div>
-						<input type="text" placeholder="請輸入驗證碼" class="reg_codeipt">
-						<a href="javascript:;" class="reg_codebtn">取得驗證碼</a>
-					</div>
-				</div>
-				<div class="login_agree">
-					<div class="check"></div>
-					<span>已閱讀並同意JJLin
-					<a href="javascript:;">《隱私政策》</a>
-					及
-					<a href="javascript:;">《服務條款》</a>
-					</span>
-				</div>
-				<div class="login_btn" id="register_btn">
-					<a href="">註冊</a>
-				</div>
-				<div class="register_some">
-					<span>
-						<a href="">無法收驗證碼？獲取語音驗證碼</a>
-					</span>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="login_background">
+  <div class="center_logo"> <img src="./images/logo.jpg" alt="JJLIN的logo"> </div>
+  <div class="login_back">
+    <div class="login">
+      <div class="login_welcome">
+        <h3>歡迎註冊JJLin</h3>
+        <p>大家庭有你的陪伴更精彩！</p>
+      </div>
+      <div class="email_box">
+        <div class="cp-select">
+          <div class="ipt-box"> <span id="selectedPhoneCode">CN +86</span> <i class="icon"></i> </div>
+          <div class="item-box" id="phoneCodeOptions"></div>
+        </div>
+        <input type="text" id="phone_input" placeholder="請輸入手機號">
+      </div>
+      <div class="reg_code">
+        <div>
+          <input type="text" id="verify_code" placeholder="請輸入驗證碼" class="reg_codeipt">
+          <a href="javascript:;" class="reg_codebtn" id="verify_get">取得驗證碼</a> </div>
+      </div>
+	  <div class="login_pass">
+	  	<input type="text" id="password" placeholder="請輸入密碼">
+	  </div>
+	  <div class="login_pass">
+	  	<input type="text" id="password-check" placeholder="請重复一次密碼以确认">
+	  </div>
+      <div class="login_agree">
+        <div class="check" id="check"></div>
+        <span>已閱讀並同意JJLin <a href="javascript:;">《隱私政策》</a> 及 <a href="javascript:;">《服務條款》</a> </span> </div>
+      <div class="login_btn" id="register_btn"> <a href="javascript:;">註冊</a> </div>
+      <div class="register_some"> <span> <a href="">無法收驗證碼？獲取語音驗證碼</a> </span> </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
