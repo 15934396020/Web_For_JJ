@@ -256,7 +256,6 @@ var phoneCodeOptionsElement;
 
 // 点击按钮时切换选项的可见性
 function toggleOptions() {
-  console.log("Clicked!");
   if (phoneCodeOptionsElement) {
     phoneCodeOptionsElement.classList.toggle('visible');
   }
@@ -315,6 +314,7 @@ function getIpAndAddressSohu() {
     });
 }
 
+
 // 阅读按钮选中/未选
 function toggleCheckBackground() {
   var checkDiv = document.getElementById('check');
@@ -330,9 +330,7 @@ function toggleCheckBackground() {
 document.addEventListener("DOMContentLoaded", function () {
   selectedPhoneCodeElement = document.getElementById('selectedPhoneCode');
   phoneCodeOptionsElement = document.getElementById('phoneCodeOptions');
-
   document.querySelector('.icon').addEventListener('click', toggleOptions);
-
   var checkAgree = document.getElementById('check');
 
   // 添加点击事件监听器
@@ -340,175 +338,79 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleCheckBackground();
   });
 
-  // 获取元素
-  var phoneInput = document.getElementById('phone_input');
-  var codeInput = document.getElementById('verify_code');
-  var verifyGet = document.getElementById('verify_get');
-  var registerBtn = document.getElementById('register_btn');
-  var registerBtnAnchor = registerBtn.querySelector('a');
-
-  // 使能验证码获取按钮
-  function toggleVerifyGetBackground() {
-    // 判断输入框是否有内容
-    if (phoneInput.value.trim() !== '') {
-      verifyGet.classList.add('active'); // 有内容时添加类名
+  // 使能登录按钮
+  function toggleLoginBackground() {
+    var loginBtnAnchor = document.getElementById('login').querySelector('a');
+    var phoneNumber = document.getElementById('phone_input').value.trim();
+    var password = document.getElementById('password').value.trim();
+    var checkBackgroundColor = window.getComputedStyle(document.getElementById('check')).getPropertyValue('background-color');
+    if (phoneNumber != '' && password != '' && checkBackgroundColor != 'rgba(0, 0, 0, 0)') {
+      loginBtnAnchor.classList.add('active'); // 有内容时添加类名
     } else {
-      verifyGet.classList.remove('active'); // 没有内容时移除类名
+      loginBtnAnchor.classList.remove('active'); // 没有内容时移除类名
     }
   }
+  var phoneInput = document.getElementById('phone_input');
+  var passInput = document.getElementById('password');
+  // 添加输入事件监听器
+  phoneInput.addEventListener('input', function () {
+    toggleLoginBackground();
+  });
+  // 添加输入事件监听器
+  passInput.addEventListener('input', function () {
+    toggleLoginBackground();
+  });
+  var loginBtn = document.getElementById('login')
+  // 添加输入事件监听器
+  loginBtn.addEventListener('mouseover', function () {
+    toggleLoginBackground();
+  });
 
-  // 使能注册按钮
-  function toggleRegisterBackground() {
+  var activeAccountData = JSON.parse(sessionStorage.getItem('ActiveAccount')) || {};
+  var storedData = JSON.parse(sessionStorage.getItem('Accounts'));
+  // 账号检验
+  function account_check() {
+    var selectedPhoneCodeSpan = document.getElementById('selectedPhoneCode');
+	var mobile_countrry_code = selectedPhoneCodeSpan.textContent || selectedPhoneCodeSpan.innerText;
     var phoneNumber = document.getElementById('phone_input').value.trim();
-    var enteredCode = document.getElementById('verify_code').value.trim();
     var password = document.getElementById('password').value.trim();
-    var password_check = document.getElementById('password-check').value.trim();
     var checkBackgroundColor = window.getComputedStyle(document.getElementById('check')).getPropertyValue('background-color');
 
-    if (phoneNumber != '' && enteredCode != '' && password != '' && password_check != '' && checkBackgroundColor != 'rgba(0, 0, 0, 0)') {
-      registerBtnAnchor.classList.add('active'); // 有内容时添加类名
+    if (storedData) {
+		console.log(storedData);
+      if (phoneNumber != '' && password != '' && checkBackgroundColor != 'rgba(0, 0, 0, 0)') {
+        var accountKey = String(mobile_countrry_code + phoneNumber);
+        if (accountKey in storedData) {
+          if (storedData[accountKey].password == password) {
+            activeAccountData[mobile_countrry_code + phoneNumber] = {
+              password: password,
+              active_status: "Active"
+            }
+			sessionStorage.setItem('ActiveAccount', JSON.stringify(activeAccountData));
+            alert("登录成功！");
+            // 重定向到 导航 页面
+            window.location.href = 'index.html';
+          } else {
+            alert("账号或密码错误！");
+          }
+        } else {
+          alert("账号不存在，请先注册！");
+        }
+      } else {
+        alert("请先输入账号和密码！"); // 没有内容时提示输入
+      }
     } else {
-      registerBtnAnchor.classList.remove('active'); // 没有内容时移除类名
+      alert("当前已注册账号数量为 0，请先注册至少一个账号！");
     }
   }
 
   // 添加输入事件监听器
-  phoneInput.addEventListener('input', function () {
-    toggleVerifyGetBackground();
-    toggleRegisterBackground();
-  });
-  codeInput.addEventListener('input', function () {
-    toggleVerifyGetBackground();
-    toggleRegisterBackground();
-  });
-  // 添加悬停事件监听器
-  registerBtn.addEventListener('mouseover', function () {
-    toggleRegisterBackground();
+  loginBtn.addEventListener('click', function () {
+    account_check();
   });
 
-  function generateOrRetrieveCode() {
-    // 获取输入框内容
-    var phoneNumber = phoneInput.value.trim();
-    // 获取区号信息
-    // 获取元素
-    var selectedPhoneCodeSpan = document.getElementById('selectedPhoneCode');
-
-    // 获取文字内容
-    var mobile_countrry_code = selectedPhoneCodeSpan.textContent || selectedPhoneCodeSpan.innerText;
-
-    if (phoneNumber != '') {
-      // 生成或检索验证码
-      var storedData = JSON.parse(localStorage.getItem('verificationCodes')) || {};
-      var storedCodeData = storedData[mobile_countrry_code + phoneNumber];
-
-      if (storedCodeData && withinTimeLimit(storedCodeData.timestamp, 60)) {
-        // 使用之前生成的验证码
-        alert('您的验证码为：' + storedCodeData.code + "。该验证码一分钟内有效。");
-      } else {
-        // 生成新的验证码
-        var newCode = generateRandomCode();
-        var timestamp = Date.now();
-
-        // 存储新的验证码及时间戳
-        storedData[mobile_countrry_code + phoneNumber] = {
-          code: newCode,
-          timestamp: timestamp
-        };
-        localStorage.setItem('verificationCodes', JSON.stringify(storedData));
-
-        // 弹窗显示新的验证码
-        alert('您的验证码为：' + newCode + "。该验证码一分钟内有效。");
-      }
-    } else {
-      alert('请输入手机号');
-    }
-  }
-
-  function withinTimeLimit(previousTimestamp, limitSeconds) {
-    // 判断时间是否在限制范围内
-    return (Date.now() - previousTimestamp) / 1000 <= limitSeconds;
-  }
-
-  // 验证码获取
-  function generateRandomCode() {
-    // 生成6位随机数
-    return Math.floor(100000 + Math.random() * 900000);
-  }
-
-  // 添加点击事件监听器
-  verifyGet.addEventListener('click', function (event) {
-    console.log("验证码获取");
-    event.preventDefault(); // 阻止默认的链接点击行为
-    generateOrRetrieveCode();
-  });
-  // 在函数外部初始化 accountData
-  var accountData = JSON.parse(sessionStorage.getItem('Accounts')) || {};
-
-  // 验证码校验的函数
-  function verifyCode() {
-    var storedData = JSON.parse(localStorage.getItem('verificationCodes')) || {};
-    // 获取输入框内容
-    var phoneNumber = phoneInput.value.trim();
-    // 获取区号信息
-    // 获取元素
-    var selectedPhoneCodeSpan = document.getElementById('selectedPhoneCode');
-    // 获取文字内容
-    var mobile_countrry_code = selectedPhoneCodeSpan.textContent || selectedPhoneCodeSpan.innerText;
-    var enteredCode = document.getElementById('verify_code').value.trim();
-    var checkBackgroundColor = window.getComputedStyle(document.getElementById('check')).getPropertyValue('background-color');
-    var password = document.getElementById('password').value.trim();
-    var password_check = document.getElementById('password-check').value.trim();
-    var registerBtn = document.getElementById('register_btn');
-
-    if (phoneNumber != '' && enteredCode != '' && password != '' && password_check != '' && checkBackgroundColor != 'rgba(0, 0, 0, 0)') {
-      var storedCodeData = storedData[mobile_countrry_code + phoneNumber];
-      // 账号重复检验
-      var accountKey = String(mobile_countrry_code + phoneNumber);
-      if (accountKey in accountData) {
-        alert('账号已存在，请勿重复注册！');
-        return;
-      }
-
-      if (storedCodeData) {
-        if (storedCodeData.code == enteredCode && withinTimeLimit(storedCodeData.timestamp, 60)) {
-          // 密码检验
-          if (password == password_check) {
-            accountData[mobile_countrry_code + phoneNumber] = {
-              password: password
-            }
-			sessionStorage.setItem('Accounts', JSON.stringify(accountData));
-            alert('恭喜你注册成功！');
-            // 重定向到 登录 页面
-            window.location.href = 'login.html';
-          } else {
-            alert('两次密码输入不一致');
-          }
-        } else if (!withinTimeLimit(storedCodeData.timestamp, 60)) {
-          alert('验证码超时已过期');
-        } else {
-          alert('验证码错误');
-        }
-      } else {
-        alert('请先获取验证码');
-      }
-    } else {
-      alert('请确保手机号、验证码和同意条款均填写正确');
-    }
-  }
-
-  // 添加点击事件监听器
-  registerBtnAnchor.addEventListener('click', function () {
-    console.log("验证码验证");
-    verifyCode();
-  });
-
-  // 初始化选项
   updatePhoneCodeOptions(phoneCodeOptionsElement);
-
   // 调用获取用户位置并执行后续操作的函数
   fetchUserLocation();
-
-  // IP 地址获取
-  // getIpAndAddressSohu();
 
 });
