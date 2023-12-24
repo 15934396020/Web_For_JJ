@@ -153,11 +153,12 @@ body {
 @media (max-width : 992px) {
   .header {
     height: 40px;
+	width: 100%;
     line-height: 40px;
     display: flex;
     justify-content: flex-start;
     position: absolute;
-    left: 13%;
+    left: 2%;
     top: 0;
   }
   #main-nav a {
@@ -168,12 +169,12 @@ body {
     height: 100%;
   }
   .header .logo img {
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: block;
   }
   .header ul {
-    width: 92%;
+    width: 80%;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -201,7 +202,7 @@ body {
     align-items: center;
   }
   .header .header_r img {
-    width: 160%;
+    width: 120%;
     height: 50%;
   }
   .header .header_r img:hover {
@@ -224,10 +225,10 @@ body {
     background-color: #9e56ff;
   }
   .header .header_r ul li {
-    margin-left: 8%;
+    margin-right: 8%;
   }
   .header .header_r ul ul {
-    margin-left: 8%;
+    margin-left: 1%;
   }
   .header .header_r .header_ul {
     width: 100px;

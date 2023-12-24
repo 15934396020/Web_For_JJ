@@ -1,7 +1,7 @@
 (function () {
   var a_idx = 0;
   window.onclick = function (event) {
-    var content = ["❤JJ❤", "❤ 圣所❤", "❤114514❤"];
+    var content = ["❤JJ❤", "❤梦为努力浇了水 爱在背后往前推❤", "❤宇宙一丝一毫 伟大并非凑巧❤"];
 
     var heart = document.createElement("b"); // 创建b元素
     heart.onselectstart = function () {
