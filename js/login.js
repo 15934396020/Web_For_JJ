@@ -368,6 +368,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var activeAccountData = JSON.parse(sessionStorage.getItem('ActiveAccount')) || {};
   var storedData = JSON.parse(sessionStorage.getItem('Accounts'));
+  // 本地账号数据
+  var localAccountData = JSON.parse(localStorage.getItem('LocalAccountData')) || {};
+  // 合并数据
+  Object.assign(localAccountData, storedData);
+  // 将合并后的数据存储回 localStorage
+  localStorage.setItem('localAccountData', JSON.stringify(localAccountData));
+  // 本地登录数据
+  var localActiveAccountData = JSON.parse(localStorage.getItem('LocalActiveAccount')) || {};	
+	
   // 账号检验
   function account_check() {
     var selectedPhoneCodeSpan = document.getElementById('selectedPhoneCode');
@@ -376,17 +385,18 @@ document.addEventListener("DOMContentLoaded", function () {
     var password = document.getElementById('password').value.trim();
     var checkBackgroundColor = window.getComputedStyle(document.getElementById('check')).getPropertyValue('background-color');
 
-    if (storedData) {
-		console.log(storedData);
+    if (localAccountData) {
       if (phoneNumber != '' && password != '' && checkBackgroundColor != 'rgba(0, 0, 0, 0)') {
         var accountKey = String(mobile_countrry_code + phoneNumber);
-        if (accountKey in storedData) {
-          if (storedData[accountKey].password == password) {
+        if (accountKey in localAccountData) {
+          if (localAccountData[accountKey].password == password) {
             activeAccountData[mobile_countrry_code + phoneNumber] = {
               password: password,
               active_status: "Active"
             }
 			sessionStorage.setItem('ActiveAccount', JSON.stringify(activeAccountData));
+			// 本地存储
+			localStorage.setItem('LocalActiveAccount', JSON.stringify(activeAccountData));
             alert("登录成功！");
             // 重定向到 导航 页面
             window.location.href = 'index.html';

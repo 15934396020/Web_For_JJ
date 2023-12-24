@@ -1,154 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- 引入 Bootstrap 的 CSS 文件 -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<!-- 引入自己编写的 CSS 文件 -->
-	<link rel="stylesheet" href="css/style.css">
-	<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<!-- 引入自己编写的 js 脚本 -->
-	<script src="js/layout_setting.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<!-- 引入 Bootstrap 的 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- 引入自己编写的 CSS 文件 -->
+<link rel="stylesheet" href="css/style.css">
+<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js --> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<!-- 引入自己编写的 js 脚本 --> 
+<script src="js/layout_setting.js"></script>
+<script src="js/accountCheck.js"></script>
+<script src="js/bio_image_play.js"></script>
 </head>
 
 <body style="background: rgb(26, 26, 36);">
-    <div class="header w">
-        <div class="logo">
-            <img src="./images/logo.jpg" alt="JJLIN的logo">
+<div class="header w">
+  <div class="logo"> <img src="./images/logo.jpg" alt="JJLIN的logo"> </div>
+  <ul>
+    <a href="./index.html" >NEWS</a> <a href="./dis.html" >DISCOGRAPHY</a> <a href="./bio.html" style="color: #9e56ff;
+            border-bottom: 5px solid #9e56ff;">BIO</a> <a href="./link.html" >LINKS</a> <a href="./shop.html" >SHOP</a>
+  </ul>
+  <div class="header_r">
+    <ul>
+      <li><img src="./images/gwc.jpg" alt="购物车"></li>
+      <li id="loginLi"><a href="./login.html" >
+        <button type="button" class="btn btn-sm">登入</button>
+        </a></li>
+      <li id="registerLi"><a href="./register.html" >
+        <button type="button" class="btn btn-sm zc">注册</button>
+        </a></li>
+      <ul class="header_ul">
+        <li>繁</li>
+        <li>/</li>
+        <li>简</li>
+      </ul>
+    </ul>
+  </div>
+</div>
+<div class="bio_banner"> <img src="./images/bio_banner.jpg" alt="JJ圣所演唱会照片"> </div>
+<div class="bio_center w">
+  <div class="bio_title">
+    <h3>JJlin</h3>
+  </div>
+  <div class="bio_center_t"> <img src="./images/bio_title_l.jpg" alt="边框图1" class="img1"> <img src="./images/bio_title_r.png" alt="边框图2" class="img2">
+    <p>林俊傑 藝名:JJ Lin 新加坡華裔男歌手、詞曲作家、音樂製作人、品牌創辦人；</p>
+    <p>曾拿下金曲獎最佳新人獎以及兩屆金曲獎最佳男歌手。</p>
+    <p>2003年,發行首張創作專輯《樂行者》出道。</p>
+    <p>2014年,以專輯《因你而在》獲得第25屆金曲獎最佳國語男歌手獎。</p>
+    <p>2016年,再以專輯《和自己對話》奪得第27屆金曲獎最佳國語男歌手獎及演唱類最佳作曲人獎。</p>
+  </div>
+  <ul id="bio_ul">
+    <li> <img src="./images/dis1.jpg" alt="重拾快乐专辑">
+      <div class="bio_li_r">
+        <div>
+          <h3>2023 ———————</h3>
+          <span>愿与愁</span>
+          <audio src="./audio/yuan-yu-chou.mp3" controls></audio>
         </div>
-        <ul>
-            <a href="./index.html" >NEWS</a>
-            <a href="./dis.html" >DISCOGRAPHY</a>
-            <a href="./bio.html" style="color: #9e56ff;
-            border-bottom: 5px solid #9e56ff;">BIO</a>
-            <a href="./link.html" >LINKS</a>
-            <a href="./shop.html" >SHOP</a>
-        </ul>
-        <div class="header_r">
-			<ul>
-				<li><img src="./images/gwc.jpg" alt="购物车"></li>
-				<li><a href="./login.html" ><button type="button" class="btn btn-sm">登入</button></a></li>
-				<li><a href="./register.html" ><button type="button" class="btn btn-sm zc">注册</button></a></li>
-            	<ul class="header_ul">
-					<li>繁</li>
-            		<li>/</li>
-            		<li>简</li>
-				</ul>
-			</ul>
+        <h4>發行第十五張創作專輯《重拾_快樂》</h4>
+        <p>4月21日,隆重推出第15張創作專輯《重拾_快樂Happily, Painfully
+          After》。由JJ領軍JFJ製作團隊製作,攜手華語樂壇頂尖音樂創作人,小寒、易家揚、林怡鳳,方文山、Anderson.Paak,以及馬毓芬、許環良老師共同參與配唱製作,專輯視覺則邀請藝術家James
+          Jean量身打造。本專輯以「找回快樂」為主軸,感悟生命過程中所歷經的快樂與痛楚，皆隨著時間而轉化為前進的力量。</p>
+      </div>
+    </li>
+    <li>
+      <div class="bio_li_r">
+        <div>
+          <h3>———————— 2022</h3>
+          <span>七千三百多天</span>
+          <audio src="./audio/qi-qian-san-bai-duo-tian.mp3" controls></audio>
         </div>
+        <h4>發行單曲《7千3百多天》</h4>
+        <p>由方文山作詞,林俊傑作曲,創作了這首別具意義的出道20周年旗艦歌曲,亦是其「JJ20世界巡迴演唱會」的主題曲,而歌名「7千3百多天」正是他與歌迷一起經歷的歲月。11月1日數位發行,並於隔年3月7日,正式發布該歌曲MV。 </p>
+      </div>
+      <img src="./images/7300.jpg" alt="JJ20宣传照"> </li>
+    <li> <img src="./images/rn.jpg" alt="JJ幸存者专辑照片">
+      <div class="bio_li_r">
+        <div>
+          <h3>2021 ————————</h3>
+          <span>幸存者</span>
+          <audio src="./audio/xing-cun-zhe.mp3" controls></audio>
+        </div>
+        <h4>發行首張全英文EP《Like You Do如你》</h4>
+        <p>4月23日,《倖存者·如你》維度二的首張全英文EP《Like You Do
+          如你》實體發行,是JJ進軍國際市場的首張作品,EP不僅挑戰各種音樂元素,也跨界與多位國際音樂人合作,碰撞出精彩花火。其中《Bedroom》是繼JJ與世界前十大DJ Steve
+          Aoki之後,再度跨海與英國實力女歌手Anne-Marie合作,引起全球樂迷關注。</p>
+      </div>
+    </li>
+    <li> <img src="./images/yq.jpg" alt="JJ《孤独娱乐》MV">
+      <div class="bio_li_r">
+        <div>
+          <h3>———————— 2020</h3>
+          <span>Stay With You</span>
+          <audio src="./audio/stay-with-you.mp3" controls></audio>
+        </div>
+        <h4>發行防疫單曲《Stay With You》</h4>
+        <p>為向武漢防疫前線人員致敬,JJ於年初攜手孫燕姿合作創作單曲《Stay With You》,並於1月28日發佈MV,為醫護人員打氣。</p>
+      </div>
+    </li>
+    <li>
+      <div class="bio_li_r">
+        <div>
+          <h3>2019 ————————</h3>
+          <span>圣所</span>
+          <audio src="./audio/sheng-suo.mp3" controls></audio>
+        </div>
+        <h4>聖所2.0 世界巡迴演唱會(30場)</h4>
+        <p>聖所2.0世界巡迴演唱會於3月23日在杭州黃龍體育中心體育場正式起航,全面進階的聖所2.0重裝上陣 ——
+          超過120噸占地近1500平米的舞台,超過20處大型舞台機關、1200米數碼燈帶環繞之下的近1000台/組燈具、與超過650平米的大螢幕配合帶來極具震撼的舞台效果,並且加入了諸多全新曲目。12月21、22日,聖所2.0世界巡迴演唱會在新加坡國家體育場上演最終場,累計共八萬觀眾入場,JJ也破紀錄成為於新加坡國家體育場連唱兩天的首位華人歌手。歷時近兩年的「聖所」巡演至此完成66場次,動員超過160萬觀眾,現場感受「聖所」的魅力。 </p>
+      </div>
+      <img src="./images/ss.jpg" alt="圣所"> </li>
+  </ul>
+</div>
+<div class="footer w">
+  <div class="footer_t">
+    <div class="footer_t_l">
+      <p>客服邮箱:service@jjlin.com</p>
+      <p>客服电话:4009203970</p>
     </div>
-    <div class="bio_banner">
-        <img src="./images/bio_banner.jpg" alt="JJ圣所演唱会照片">
+    <div class="footer_t_r">
+      <ul>
+        <li>常见问题</li>
+        <li>|</li>
+        <li>隐私条款</li>
+        <li>|</li>
+        <li>服务条款</li>
+      </ul>
     </div>
-    <div class="bio_center w">
-        <div class="bio_title">
-            <h3>JJlin</h3>
-        </div>
-        <div class="bio_center_t">
-            <img src="./images/bio_title_l.jpg" alt="边框图1" class="img1">
-            <img src="./images/bio_title_r.png" alt="边框图2" class="img2">
-            <p>林俊傑 藝名:JJ Lin 新加坡華裔男歌手、詞曲作家、音樂製作人、品牌創辦人；</p>
-            <p>曾拿下金曲獎最佳新人獎以及兩屆金曲獎最佳男歌手。</p>
-            <p>2003年,發行首張創作專輯《樂行者》出道。</p>
-            <p>2014年,以專輯《因你而在》獲得第25屆金曲獎最佳國語男歌手獎。</p>
-            <p>2016年,再以專輯《和自己對話》奪得第27屆金曲獎最佳國語男歌手獎及演唱類最佳作曲人獎。</p>
-        </div>
-        <ul>
-            <li>
-                <img src="./images/dis1.jpg" alt="重拾快乐专辑">
-                <div class="bio_li_r">
-                    <div>
-						<h3>2023 ———————</h3>
-						<span>愿与愁</span>
-						<audio src="./audio/yuan-yu-chou.mp3" controls></audio>
-					</div>
-                    <h4>發行第十五張創作專輯《重拾_快樂》</h4>
-                    <p>4月21日,隆重推出第15張創作專輯《重拾_快樂Happily, Painfully
-                        After》。由JJ領軍JFJ製作團隊製作,攜手華語樂壇頂尖音樂創作人,小寒、易家揚、林怡鳳,方文山、Anderson.Paak,以及馬毓芬、許環良老師共同參與配唱製作,專輯視覺則邀請藝術家James
-                        Jean量身打造。本專輯以「找回快樂」為主軸,感悟生命過程中所歷經的快樂與痛楚，皆隨著時間而轉化為前進的力量。</p>
-                </div>
-            </li>
-            <li>
-                <div class="bio_li_r">
-                    <div>
-						<h3>———————— 2022</h3>
-						<span>七千三百多天</span>
-						<audio src="./audio/qi-qian-san-bai-duo-tian.mp3" controls></audio>
-					</div>
-                    <h4>發行單曲《7千3百多天》</h4>
-                    <p>由方文山作詞,林俊傑作曲,創作了這首別具意義的出道20周年旗艦歌曲,亦是其「JJ20世界巡迴演唱會」的主題曲,而歌名「7千3百多天」正是他與歌迷一起經歷的歲月。11月1日數位發行,並於隔年3月7日,正式發布該歌曲MV。
-                    </p>
-                </div>
-                <img src="./images/7300.jpg" alt="JJ20宣传照">
-            </li>
-            <li>
-                <img src="./images/rn.jpg" alt="JJ幸存者专辑照片">
-                <div class="bio_li_r">
-                    <div>
-						<h3>2021 ————————</h3>
-						<span>幸存者</span>
-						<audio src="./audio/xing-cun-zhe.mp3" controls></audio>
-					</div>
-                    <h4>發行首張全英文EP《Like You Do如你》</h4>
-                    <p>4月23日,《倖存者·如你》維度二的首張全英文EP《Like You Do
-                        如你》實體發行,是JJ進軍國際市場的首張作品,EP不僅挑戰各種音樂元素,也跨界與多位國際音樂人合作,碰撞出精彩花火。其中《Bedroom》是繼JJ與世界前十大DJ Steve
-                        Aoki之後,再度跨海與英國實力女歌手Anne-Marie合作,引起全球樂迷關注。</p>
-                </div>
-            </li>
-            <li>
-                <img src="./images/yq.jpg" alt="JJ《孤独娱乐》MV">
-                <div class="bio_li_r">
-                    <div>
-						<h3>———————— 2020</h3>
-						<span>Stay With You</span>
-						<audio src="./audio/stay-with-you.mp3" controls></audio>
-					</div>
-                    <h4>發行防疫單曲《Stay With You》</h4>
-                    <p>為向武漢防疫前線人員致敬,JJ於年初攜手孫燕姿合作創作單曲《Stay With You》,並於1月28日發佈MV,為醫護人員打氣。</p>
-                </div>
-            </li>
-            <li>
-                <div class="bio_li_r">
-                    <div>
-						<h3>2019 ————————</h3>
-						<span>圣所</span>
-						<audio src="./audio/sheng-suo.mp3" controls></audio>
-					</div>
-                    <h4>聖所2.0 世界巡迴演唱會(30場)</h4>
-                    <p>聖所2.0世界巡迴演唱會於3月23日在杭州黃龍體育中心體育場正式起航,全面進階的聖所2.0重裝上陣 ——
-                        超過120噸占地近1500平米的舞台,超過20處大型舞台機關、1200米數碼燈帶環繞之下的近1000台/組燈具、與超過650平米的大螢幕配合帶來極具震撼的舞台效果,並且加入了諸多全新曲目。12月21、22日,聖所2.0世界巡迴演唱會在新加坡國家體育場上演最終場,累計共八萬觀眾入場,JJ也破紀錄成為於新加坡國家體育場連唱兩天的首位華人歌手。歷時近兩年的「聖所」巡演至此完成66場次,動員超過160萬觀眾,現場感受「聖所」的魅力。
-                    </p>
-                </div>
-                <img src="./images/ss.jpg" alt="圣所">
-            </li>
-        </ul>
-    </div>
-    <div class="footer w">
-        <div class="footer_t">
-            <div class="footer_t_l">
-                <p>客服邮箱:service@jjlin.com</p>
-                <p>客服电话:4009203970</p>
-            </div>
-            <div class="footer_t_r">
-                <ul>
-                    <li>常见问题</li>
-                    <li>|</li>
-                    <li>隐私条款</li>
-                    <li>|</li>
-                    <li>服务条款</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer_b">
-            <p>Copyright ©傑聯邦國際有限公司，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved powered by SANCTUARYTECH</p>
-        </div>
-    </div>
+  </div>
+  <div class="footer_b">
+    <p>Copyright ©傑聯邦國際有限公司，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved powered by SANCTUARYTECH</p>
+  </div>
+</div>
 </body>
-
 </html>

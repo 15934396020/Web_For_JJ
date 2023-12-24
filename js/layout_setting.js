@@ -38,6 +38,9 @@ function setFontSize() {
 	document.querySelectorAll('#selectedPhoneCode').forEach(function (element) {
       element.style.fontSize = '8px'; // Adjust the font size for small screens
     });
+	document.querySelectorAll('.account_info p').forEach(function (element) {
+      element.style.fontSize = '4px'; // Adjust the font size for small screens
+    });
   } else if (screenWidth < 992) { // Medium screens
     document.querySelectorAll('h3, .bio_li_r span').forEach(function (element) {
       element.style.fontSize = '18px'; // Adjust the font size for medium screens
@@ -68,6 +71,9 @@ function setFontSize() {
 	document.querySelectorAll('#selectedPhoneCode').forEach(function (element) {
       element.style.fontSize = '8px'; // Adjust the font size for small screens
     });
+	document.querySelectorAll('.account_info p').forEach(function (element) {
+      element.style.fontSize = '10px'; // Adjust the font size for small screens
+    });
   } else { // Large screens
     document.querySelectorAll('h3, .bio_li_r span').forEach(function (element) {
       element.style.fontSize = '28px'; // Adjust the font size for large screens
@@ -94,6 +100,9 @@ function setFontSize() {
     });
 	document.querySelectorAll('#selectedPhoneCode').forEach(function (element) {
       element.style.fontSize = '12px'; // Adjust the font size for small screens
+    });
+	document.querySelectorAll('.account_info p').forEach(function (element) {
+      element.style.fontSize = '14px'; // Adjust the font size for small screens
     });
   }
 }

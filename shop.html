@@ -1,95 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- 引入 Bootstrap 的 CSS 文件 -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<!-- 引入自己编写的 CSS 文件 -->
-	<link rel="stylesheet" href="css/style.css">
-	<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<!-- 引入自己编写的 js 脚本 -->
-	<script src="js/layout_setting.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<!-- 引入 Bootstrap 的 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- 引入自己编写的 CSS 文件 -->
+<link rel="stylesheet" href="css/style.css">
+<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js --> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<!-- 引入自己编写的 js 脚本 --> 
+<script src="js/layout_setting.js"></script> 
+<script src="js/accountCheck.js"></script>
 </head>
 
 <body>
-    <div class="header w">
-        <div class="logo">
-            <img src="./images/logo.jpg" alt="JJLIN的logo">
-        </div>
-        <ul>
-            <a href="./index.html" >NEWS</a>
-            <a href="./dis.html" >DISCOGRAPHY</a>
-            <a href="./bio.html" >BIO</a>
-            <a href="./link.html" >LINKS</a>
-            <a href="./shop.html" style="color: #9e56ff;
+<div class="header w">
+  <div class="logo"> <img src="./images/logo.jpg" alt="JJLIN的logo"> </div>
+  <ul>
+    <a href="./index.html" >NEWS</a> <a href="./dis.html" >DISCOGRAPHY</a> <a href="./bio.html" >BIO</a> <a href="./link.html" >LINKS</a> <a href="./shop.html" style="color: #9e56ff;
             border-bottom: 5px solid #9e56ff;">SHOP</a>
-        </ul>
-        <div class="header_r">
-			<ul>
-				<li><img src="./images/gwc.jpg" alt="购物车"></li>
-				<li><a href="./login.html" ><button type="button" class="btn btn-sm">登入</button></a></li>
-				<li><a href="./register.html" ><button type="button" class="btn btn-sm zc">注册</button></a></li>
-            	<ul class="header_ul">
-					<li>繁</li>
-            		<li>/</li>
-            		<li>简</li>
-				</ul>
-			</ul>
-        </div>
+  </ul>
+  <div class="header_r">
+    <ul>
+      <li><img src="./images/gwc.jpg" alt="购物车"></li>
+      <li id="loginLi"><a href="./login.html" >
+        <button type="button" class="btn btn-sm">登入</button>
+        </a></li>
+      <li id="registerLi"><a href="./register.html" >
+        <button type="button" class="btn btn-sm zc">注册</button>
+        </a></li>
+      <ul class="header_ul">
+        <li>繁</li>
+        <li>/</li>
+        <li>简</li>
+      </ul>
+    </ul>
+  </div>
+</div>
+<div class="shop_banner w">
+  <video src="./images/video.mp4" autoplay loop controls></video>
+</div>
+<div class="shop_center w">
+  <ul>
+    <li> <img src="./images/shop1.jpg" alt="林距離會服">
+      <p>2023 林距離會服</p>
+      <h3>120.00CNY</h3>
+    </li>
+    <li> <img src="./images/shop2.jpg" alt="林距離會服">
+      <p>2023 林距離會服</p>
+      <h3>120.00CNY</h3>
+    </li>
+    <li> <img src="./images/shop3.jpg" alt="線上扭蛋機代幣">
+      <p>線上扭蛋機代幣</p>
+      <h3>120.00CNY</h3>
+    </li>
+    <li> <img src="./images/shop4.jpg" alt="林距離316不繡鋼環保吸管">
+      <p>林距離316不繡鋼環保吸管</p>
+      <h3>110.00CNY</h3>
+    </li>
+  </ul>
+</div>
+<div class="footer w">
+  <div class="footer_t">
+    <div class="footer_t_l">
+      <p>客服邮箱:service@jjlin.com</p>
+      <p>客服电话:4009203970</p>
     </div>
-    <div class="shop_banner w">
-        <video src="./images/video.mp4" autoplay loop controls></video>
+    <div class="footer_t_r">
+      <ul>
+        <li>常见问题</li>
+        <li>|</li>
+        <li>隐私条款</li>
+        <li>|</li>
+        <li>服务条款</li>
+      </ul>
     </div>
-    <div class="shop_center w">
-        <ul>
-            <li>
-                <img src="./images/shop1.jpg" alt="林距離會服">
-                <p>2023 林距離會服</p>
-                <h3>120.00CNY</h3>
-            </li>
-            <li>
-                <img src="./images/shop2.jpg" alt="林距離會服">
-                <p>2023 林距離會服</p>
-                <h3>120.00CNY</h3>
-            </li>
-            <li>
-                <img src="./images/shop3.jpg" alt="線上扭蛋機代幣">
-                <p>線上扭蛋機代幣</p>
-                <h3>120.00CNY</h3>
-            </li>
-            <li>
-                <img src="./images/shop4.jpg" alt="林距離316不繡鋼環保吸管">
-                <p>林距離316不繡鋼環保吸管</p>
-                <h3>110.00CNY</h3>
-            </li>
-        </ul>
-    </div>
-    <div class="footer w">
-        <div class="footer_t">
-            <div class="footer_t_l">
-                <p>客服邮箱:service@jjlin.com</p>
-                <p>客服电话:4009203970</p>
-            </div>
-            <div class="footer_t_r">
-                <ul>
-                    <li>常见问题</li>
-                    <li>|</li>
-                    <li>隐私条款</li>
-                    <li>|</li>
-                    <li>服务条款</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer_b">
-            <p>Copyright ©傑聯邦國際有限公司，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved powered by SANCTUARYTECH</p>
-        </div>
-    </div>
+  </div>
+  <div class="footer_b">
+    <p>Copyright ©傑聯邦國際有限公司，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved powered by SANCTUARYTECH</p>
+  </div>
+</div>
 </body>
-
 </html>

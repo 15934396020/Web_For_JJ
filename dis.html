@@ -1,193 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- 引入 Bootstrap 的 CSS 文件 -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<!-- 引入自己编写的 CSS 文件 -->
-	<link rel="stylesheet" href="css/style.css">
-	<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<!-- 引入自己编写的 js 脚本 -->
-	<script src="js/layout_setting.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<!-- 引入 Bootstrap 的 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- 引入自己编写的 CSS 文件 -->
+<link rel="stylesheet" href="css/style.css">
+<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js --> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<!-- 引入自己编写的 js 脚本 --> 
+<script src="js/layout_setting.js"></script> 
+<script src="js/accountCheck.js"></script>
 </head>
 
 <body>
-    <div class="header w">
-        <div class="logo">
-            <img src="./images/logo.jpg" alt="JJLIN的logo">
-        </div>
-        <ul>
-            <a href="./index.html" >NEWS</a>
-            <a href="./dis.html" style="color: #9e56ff;
-            border-bottom: 5px solid #9e56ff;">DISCOGRAPHY</a>
-            <a href="./bio.html" >BIO</a>
-            <a href="./link.html" >LINKS</a>
-            <a href="./shop.html" >SHOP</a>
-        </ul>
-        <div class="header_r">
-			<ul>
-				<li><img src="./images/gwc.jpg" alt="购物车"></li>
-				<li><a href="./login.html" ><button type="button" class="btn btn-sm">登入</button></a></li>
-				<li><a href="./register.html" ><button type="button" class="btn btn-sm zc">注册</button></a></li>
-            	<ul class="header_ul">
-					<li>繁</li>
-            		<li>/</li>
-            		<li>简</li>
-				</ul>
-			</ul>
-        </div>
+<div class="header w">
+  <div class="logo"> <img src="./images/logo.jpg" alt="JJLIN的logo"> </div>
+  <ul>
+    <a href="./index.html" >NEWS</a> <a href="./dis.html" style="color: #9e56ff;
+            border-bottom: 5px solid #9e56ff;">DISCOGRAPHY</a> <a href="./bio.html" >BIO</a> <a href="./link.html" >LINKS</a> <a href="./shop.html" >SHOP</a>
+  </ul>
+  <div class="header_r">
+    <ul>
+      <li><img src="./images/gwc.jpg" alt="购物车"></li>
+      <li id="loginLi"><a href="./login.html" >
+        <button type="button" class="btn btn-sm">登入</button>
+        </a></li>
+      <li id="registerLi"><a href="./register.html" >
+        <button type="button" class="btn btn-sm zc">注册</button>
+        </a></li>
+      <ul class="header_ul">
+        <li>繁</li>
+        <li>/</li>
+        <li>简</li>
+      </ul>
+    </ul>
+  </div>
+</div>
+<div class="dis_center">
+  <ul>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis1.jpg" alt="重拾快乐专辑" class="img">
+      <h3>重拾_快樂 Happily, Painfully After</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis2.jpg" alt="At least I had you专辑" class="img">
+      <h3>At Least I Had You</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis3.jpg" alt="After The Rain专辑" class="img">
+      <h3>After The Rain</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis4.jpg" alt=" 一定会专辑" class="img">
+      <h3>一定會</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis5.jpg" alt="Like you do专辑" class="img">
+      <h3>Like You Do 如你</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis6.jpg" alt="幸存者专辑" class="img">
+      <h3>倖存者 Drifter</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis7.jpg" alt="无滤镜专辑" class="img">
+      <h3>無濾鏡</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis8.jpg" alt="Stay with You专辑" class="img">
+      <h3>Stay with You</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis9.jpg" alt="As I Believe专辑" class="img">
+      <h3>As I Believe</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis10.jpg" alt="偉大的渺小专辑" class="img">
+      <h3>偉大的渺小</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis11.jpg" alt="黑夜問白天专辑" class="img">
+      <h3>黑夜問白天</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis12.jpg" alt="和自己對話专辑" class="img">
+      <h3>和自己對話</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis13.jpg" alt="不為誰而作的歌专辑" class="img">
+      <h3>不為誰而作的歌</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis14.jpg" alt="新地球专辑" class="img">
+      <h3>新地球</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis15.jpg" alt="因你而在专辑" class="img">
+      <h3>因你而在</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis16.jpg" alt="學不會专辑" class="img">
+      <h3>學不會</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis17.jpg" alt="她說专辑" class="img">
+      <h3>她說</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis18.jpg" alt="100天专辑" class="img">
+      <h3>100天</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis19.jpg" alt="JJ陸专辑" class="img">
+      <h3>JJ陸</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis20.jpg" alt="西界专辑" class="img">
+      <h3>西界</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis21.jpg" alt="曹操专辑" class="img">
+      <h3>曹操</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis22.jpg" alt="編號89757专辑" class="img">
+      <h3>編號89757</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis23.jpg" alt="第二天堂专辑" class="img">
+      <h3>第二天堂</h3>
+    </li>
+    <li> <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi"> <img src="./images/dis24.jpg" alt="樂行者专辑" class="img">
+      <h3>樂行者</h3>
+    </li>
+  </ul>
+  <div class="clearfloat"></div>
+</div>
+<div class="footer w">
+  <div class="footer_t">
+    <div class="footer_t_l">
+      <p>客服邮箱:service@jjlin.com</p>
+      <p>客服电话:4009203970</p>
     </div>
-    <div class="dis_center">
-        <ul>
-            <li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis1.jpg" alt="重拾快乐专辑" class="img">
-                <h3>重拾_快樂 Happily, Painfully After</h3>
-            </li>
-            <li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis2.jpg" alt="At least I had you专辑" class="img">
-                <h3>At Least I Had You</h3>
-            </li>
-            <li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis3.jpg" alt="After The Rain专辑" class="img">
-                <h3>After The Rain</h3>
-            </li>
-            <li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis4.jpg" alt=" 一定会专辑" class="img">
-                <h3>一定會</h3>
-            </li>
-            <li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis5.jpg" alt="Like you do专辑" class="img">
-                <h3>Like You Do 如你</h3>
-            </li>
-            <li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis6.jpg" alt="幸存者专辑" class="img">
-                <h3>倖存者 Drifter</h3>
-            </li>
-            <li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis7.jpg" alt="无滤镜专辑" class="img">
-                <h3>無濾鏡</h3>
-            </li>
-            <li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis8.jpg" alt="Stay with You专辑" class="img">
-                <h3>Stay with You</h3>
-            </li>
-            <li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis9.jpg" alt="As I Believe专辑" class="img">
-                <h3>As I Believe</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis10.jpg" alt="偉大的渺小专辑" class="img">
-                <h3>偉大的渺小</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis11.jpg" alt="黑夜問白天专辑" class="img">
-                <h3>黑夜問白天</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis12.jpg" alt="和自己對話专辑" class="img">
-                <h3>和自己對話</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis13.jpg" alt="不為誰而作的歌专辑" class="img">
-                <h3>不為誰而作的歌</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis14.jpg" alt="新地球专辑" class="img">
-                <h3>新地球</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis15.jpg" alt="因你而在专辑" class="img">
-                <h3>因你而在</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis16.jpg" alt="學不會专辑" class="img">
-                <h3>學不會</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis17.jpg" alt="她說专辑" class="img">
-                <h3>她說</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis18.jpg" alt="100天专辑" class="img">
-                <h3>100天</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis19.jpg" alt="JJ陸专辑" class="img">
-                <h3>JJ陸</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis20.jpg" alt="西界专辑" class="img">
-                <h3>西界</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis21.jpg" alt="曹操专辑" class="img">
-                <h3>曹操</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis22.jpg" alt="編號89757专辑" class="img">
-                <h3>編號89757</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis23.jpg" alt="第二天堂专辑" class="img">
-                <h3>第二天堂</h3>
-            </li>
-			<li>
-                <img src="./images/dis_gpi.jpg" alt="播放器" class="bgi">
-                <img src="./images/dis24.jpg" alt="樂行者专辑" class="img">
-                <h3>樂行者</h3>
-            </li>
-        </ul>
-		<div class="clearfloat"></div>
+    <div class="footer_t_r">
+      <ul>
+        <li>常见问题</li>
+        <li>|</li>
+        <li>隐私条款</li>
+        <li>|</li>
+        <li>服务条款</li>
+      </ul>
     </div>
-    <div class="footer w">
-        <div class="footer_t">
-            <div class="footer_t_l">
-                <p>客服邮箱:service@jjlin.com</p>
-                <p>客服电话:4009203970</p>
-            </div>
-            <div class="footer_t_r">
-                <ul>
-                    <li>常见问题</li>
-                    <li>|</li>
-                    <li>隐私条款</li>
-                    <li>|</li>
-                    <li>服务条款</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer_b">
-            <p>Copyright ©傑聯邦國際有限公司，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved powered by SANCTUARYTECH</p>
-        </div>
-    </div>
+  </div>
+  <div class="footer_b">
+    <p>Copyright ©傑聯邦國際有限公司，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved powered by SANCTUARYTECH</p>
+  </div>
+</div>
 </body>
-
 </html>

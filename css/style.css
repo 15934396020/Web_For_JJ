@@ -2139,3 +2139,29 @@ Register Page
   }
 }
 /* ==== End of Adjustment */
+/* ==== Account Image ==== */
+.account {
+	background-color: white;
+}
+.red-bg {
+	background-color: red;
+}
+.info-container {
+  position: relative;
+}
+.account_info {
+  display: none;
+  position: absolute;
+  top: 100%; /* 正下方，可以根据需要调整位置 */
+  left: 40%;
+  width: 200%;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.account_info p {
+	text-align: center;
+}

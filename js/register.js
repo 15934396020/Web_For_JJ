@@ -441,7 +441,9 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault(); // 阻止默认的链接点击行为
     generateOrRetrieveCode();
   });
-  // 在函数外部初始化 accountData
+  // 本地账号数据
+  var localAccountData = JSON.parse(localStorage.getItem('LocalAccountData')) || {};
+  // 在函数外部初始化 accountData -- 会话存储 用于传递信息到登录页面
   var accountData = JSON.parse(sessionStorage.getItem('Accounts')) || {};
 
   // 验证码校验的函数
@@ -464,7 +466,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var storedCodeData = storedData[mobile_countrry_code + phoneNumber];
       // 账号重复检验
       var accountKey = String(mobile_countrry_code + phoneNumber);
-      if (accountKey in accountData) {
+      if (accountKey in accountData || accountKey in localAccountData) {
         alert('账号已存在，请勿重复注册！');
         return;
       }
@@ -477,6 +479,11 @@ document.addEventListener("DOMContentLoaded", function () {
               password: password
             }
 			sessionStorage.setItem('Accounts', JSON.stringify(accountData));
+			// 本地存储
+			localAccountData[mobile_countrry_code + phoneNumber] = {
+              password: password
+            }
+			localStorage.setItem('LocalAccountData', JSON.stringify(localAccountData));
             alert('恭喜你注册成功！');
             // 重定向到 登录 页面
             window.location.href = 'login.html';

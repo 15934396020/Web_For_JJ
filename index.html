@@ -1,109 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-	<!-- 引入 Bootstrap 的 CSS 文件 -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<!-- 引入自己编写的 CSS 文件 -->
-	<link rel="stylesheet" href="css/style.css">
-	<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<!-- 引入自己编写的 js 脚本 -->
-	<script src="js/load.js"></script>
-	<script src="js/layout_setting.js"></script>
-	<script src="js/dynamic_contents.js"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Index</title>
+<!-- 引入 Bootstrap 的 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- 引入自己编写的 CSS 文件 -->
+<link rel="stylesheet" href="css/style.css">
+<!-- 引入 Bootstrap 的 JavaScript 文件，包括依赖的 Popper.js --> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<!-- 引入自己编写的 js 脚本 --> 
+<script src="js/load.js"></script> 
+<script src="js/layout_setting.js"></script> 
+<script src="js/dynamic_contents.js"></script> 
+<script src="js/accountCheck.js"></script>
 </head>
 
 <body>
-	<div class="loader-container" id="loader-container">
-    <div class="loader">
-      <img src="images/logo-icon.svg" class="img-responsive" alt="Logo">
-      <div class="progress-bar-container">
-        <div class="progress-bar" id="progress-bar"></div>
-      </div>
+<div class="loader-container" id="loader-container">
+  <div class="loader"> <img src="images/logo-icon.svg" class="img-responsive" alt="Logo">
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
     </div>
   </div>
-  <div class="header w">
-        <div class="logo">
-            <img src="./images/logo.jpg" class="img-responsive" alt="JJLIN的logo">
-        </div>
-        <ul>
-            <a href="./index.html" style="color: #9e56ff;
-            border-bottom: 5px solid #9e56ff;">NEWS</a>
-            <a href="./dis.html" >DISCOGRAPHY</a>
-            <a href="./bio.html" >BIO</a>
-            <a href="./link.html">LINKS</a>
-            <a href="./shop.html">SHOP</a>          
-        </ul>
-        <div class="header_r">
-			<ul>
-				<li><img src="./images/gwc.jpg" class="img-responsive" alt="购物车"></li>
-				<li><a href="./login.html" ><button type="button" class="btn btn-sm">登入</button></a></li>
-				<li><a href="./register.html" ><button type="button" class="btn btn-sm zc">注册</button></a></li>
-            	<ul class="header_ul">
-					<li>繁</li>
-            		<li>/</li>
-            		<li>简</li>
-				</ul>
-			</ul>
-        </div>
+</div>
+<div class="header w">
+  <div class="logo"> <img src="./images/logo.jpg" class="img-responsive" alt="JJLIN的logo"> </div>
+  <ul>
+    <a href="./index.html" style="color: #9e56ff;
+            border-bottom: 5px solid #9e56ff;">NEWS</a> <a href="./dis.html" >DISCOGRAPHY</a> <a href="./bio.html" >BIO</a> <a href="./link.html">LINKS</a> <a href="./shop.html">SHOP</a>
+  </ul>
+  <div class="header_r">
+    <ul>
+      <li><img src="./images/gwc.jpg" class="img-responsive" alt="购物车"></li>
+      <li id="loginLi"><a href="./login.html" >
+        <button type="button" class="btn btn-sm">登入</button>
+        </a></li>
+      <li id="registerLi"><a href="./register.html" >
+        <button type="button" class="btn btn-sm zc">注册</button>
+        </a></li>
+      <ul class="header_ul">
+        <li>繁</li>
+        <li>/</li>
+        <li>简</li>
+      </ul>
+    </ul>
+  </div>
+</div>
+<div class="slideshow-container">
+  <div class="slide active"> <img src="./images/banner.jpg" class="img-responsive" alt="JJ首页背景1"> </div>
+  <div class="slide"> <img src="./images/banner2.jpg" class="img-responsive" alt="JJ首页背景2"> </div>
+  <audio src="./audio/aideo.mp3" autoplay controls></audio>
+</div>
+<div class="navbar w">
+  <ul>
+    <li>全部</li>
+    <li>新闻</li>
+    <li>社群</li>
+    <li>JJ日记</li>
+    <li>Vlog</li>
+    <li>私密相册</li>
+    <li>小版工</li>
+  </ul>
+</div>
+<div class="center w">
+  <ul id="news_contents">
+    <!-- 由 js 动态生成 -->
+  </ul>
+</div>
+<div class="fy w">
+  <ul id="paging">
+    <!-- 由 js 动态生成 -->
+  </ul>
+</div>
+<div class="footer w">
+  <div class="footer_t">
+    <div class="footer_t_l">
+      <p>客服邮箱:service@jjlin.com</p>
+      <p>客服电话:4009203970</p>
     </div>
-    <div class="slideshow-container">
-        <div class="slide active">
-            <img src="./images/banner.jpg" class="img-responsive" alt="JJ首页背景1">
-        </div>
-        <div class="slide">
-            <img src="./images/banner2.jpg" class="img-responsive" alt="JJ首页背景2">
-        </div>
-		<audio src="./audio/aideo.mp3" autoplay controls></audio>
+    <div class="footer_t_r">
+      <ul>
+        <li>常见问题</li>
+        <li>|</li>
+        <li>隐私条款</li>
+        <li>|</li>
+        <li>服务条款</li>
+      </ul>
     </div>
-    <div class="navbar w">
-        <ul>
-            <li>全部</li>
-            <li>新闻</li>
-            <li>社群</li>
-            <li>JJ日记</li>
-            <li>Vlog</li>
-            <li>私密相册</li>
-            <li>小版工</li>
-        </ul>
-    </div>
-    <div class="center w">
-        <ul id="news_contents">
-            <!-- 由 js 动态生成 -->
-        </ul>
-    </div>
-    <div class="fy w">
-        <ul id="paging">
-            <!-- 由 js 动态生成 -->
-        </ul>
-    </div>
-    <div class="footer w">
-        <div class="footer_t">
-            <div class="footer_t_l">
-                <p>客服邮箱:service@jjlin.com</p>
-                <p>客服电话:4009203970</p>
-            </div>
-            <div class="footer_t_r">
-                <ul>
-                    <li>常见问题</li>
-                    <li>|</li>
-                    <li>隐私条款</li>
-                    <li>|</li>
-                    <li>服务条款</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer_b">
-            <p>Copyright ©傑聯邦國際有限公司，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved powered by SANCTUARYTECH</p>
-        </div>
-    </div>
+  </div>
+  <div class="footer_b">
+    <p>Copyright ©傑聯邦國際有限公司，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved powered by SANCTUARYTECH</p>
+  </div>
+</div>
 </body>
-
 </html>
