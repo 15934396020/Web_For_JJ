@@ -78,17 +78,26 @@ body {
   border-top-right-radius: 5vw;
   border-bottom-right-radius: 5vw;
   display: none;
+  overflow: hidden; /* 隐藏溢出内容 */
+  transition: width 0.5s ease;
 }
 
 .BGM-left {
   width: 80%;
   text-align: center;
   margin-right: 5%;
+  transition: height 0.5s ease; /* 添加过渡效果 */
+  overflow: hidden; /* 隐藏溢出内容 */
 }
 
 .BGM-left img {
   max-width: 100%;
   height: auto;
+  z-index: 10001;
+}
+
+.BGM-left img:hover {
+  cursor: pointer;
 }
 
 .BGM-right {
@@ -101,6 +110,24 @@ body {
   max-width: 100%;
   height: 40%; /* 父元素高度的40% */
   vertical-align: middle;
+}
+
+.BGM-right img:hover {
+  cursor: pointer;
+}
+
+.rotate {
+  animation: rotateAnimation 2s linear infinite; /* 添加旋转动画 */
+  transform-origin: 50% 50%; /* 设置中心点偏右一点 */
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* 头部导航栏 */
@@ -299,7 +326,7 @@ body {
   margin-top: 120px;
   overflow: hidden;
 }
-.slideshow-container audio {
+#BGM  {
   width: 20%;
   position: absolute;
   left: 0;
@@ -425,7 +452,7 @@ body {
     display: flex;
     justify-content: space-between;
   }
-  .slideshow-container audio {
+#BGM  {
     width: 40%;
     position: absolute;
     left: 0;
@@ -2249,4 +2276,7 @@ Register Page
 }
 .account_info p {
   text-align: center;
+}
+#BGM {
+  display: none;
 }

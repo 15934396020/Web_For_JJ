@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 如果找到了 audio 元素，则播放音频
   if (audioElement) {
-    audioElement.play();
+    // audioElement.play();
   }
 
   window.addEventListener("load", function () {
