@@ -12,6 +12,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script> 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<!-- 简/繁体转换 -->
+<script src="js/text_convert.js"></script>
 <!-- 引入自己编写的 js 脚本 --> 
 <script src="js/layout_setting.js"></script> 
 <script src="js/accountCheck.js"></script>
@@ -35,9 +37,9 @@
         <button type="button" class="btn btn-sm zc">注册</button>
         </a></li>
       <ul class="header_ul">
-        <li>繁</li>
-        <li>/</li>
-        <li>简</li>
+        <li id="traditional">繁</li>
+        <li id="separator">/</li>
+        <li id="simplified">简</li>
       </ul>
     </ul>
   </div>
