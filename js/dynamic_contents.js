@@ -155,6 +155,7 @@ function updatePageStyles(current_page) {
         }
     }
 	setFontSize();
+	refreshText();
 }
 
 /* 重载页面时刷新默认内容 */

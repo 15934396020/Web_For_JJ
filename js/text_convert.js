@@ -128,3 +128,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function refreshText() {
+  var traditionalLi = document.getElementById('traditional');
+  // 相应内容转换
+  if (traditionalLi.textContent == '繁') {
+    // 转换为繁体字
+    s_to_t(document.body);
+  } else {
+    // 转换为简体字
+    t_to_s(document.body);
+  }
+}
+
+// 页面变化时调用
+window.addEventListener("load", function () {
+  refreshText();
+});
+window.addEventListener("resize", function () {
+  refreshText();
+});

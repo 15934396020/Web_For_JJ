@@ -147,6 +147,9 @@ body {
 .header .header_r .header_ul li:first-child {
   color: #fff;
 }
+.header .header_r .header_ul li:hover {
+  cursor: pointer;
+}
 /*
 * 手机端头部导航栏适应比例调整防止 Logo 严重失真和文字错位
 */
