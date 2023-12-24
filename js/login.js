@@ -392,7 +392,9 @@ document.addEventListener("DOMContentLoaded", function () {
           if (localAccountData[accountKey].password == password) {
             activeAccountData[mobile_countrry_code + phoneNumber] = {
               password: password,
-              active_status: "Active"
+              active_status: "Active",
+			  country:localAccountData[accountKey].country,
+			  city:localAccountData[accountKey].city,
             }
 			sessionStorage.setItem('ActiveAccount', JSON.stringify(activeAccountData));
 			// 本地存储

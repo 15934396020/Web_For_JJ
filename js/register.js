@@ -1,3 +1,5 @@
+var coords = "";
+
 async function getUserLocation() {
   return new Promise((resolve, reject) => {
     if (navigator.geolocation) {
@@ -6,10 +8,10 @@ async function getUserLocation() {
           var latitude = position.coords.latitude;
           var longitude = position.coords.longitude;
 
-          console.log("User's Location:");
+          // console.log("User's Location:");
           console.log("Latitude: " + latitude);
           console.log("Longitude: " + longitude);
-
+          coords = longitude + "," + latitude;
           resolve([latitude, longitude]);
         },
         function (error) {
@@ -28,6 +30,7 @@ async function getUserLocation() {
 async function fetchUserLocation() {
   try {
     const position = await getUserLocation();
+
     const apiUrl = `https://nominatim.openstreetmap.org/reverse?lat=${position[0]}&lon=${position[1]}&format=json`;
 
     const response = await fetch(apiUrl);
@@ -256,7 +259,7 @@ var phoneCodeOptionsElement;
 
 // 点击按钮时切换选项的可见性
 function toggleOptions() {
-  console.log("Clicked!");
+  // console.log("Clicked!");
   if (phoneCodeOptionsElement) {
     phoneCodeOptionsElement.classList.toggle('visible');
   }
@@ -288,42 +291,33 @@ function updatePhoneCodeOptions(phoneCodeOptionsElement) {
 }
 
 // IP 地址信息获取
-function getIpAndAddressSohu() {
-  // 定义API接口的URL
-  const apiUrl = 'http://pv.sohu.com/cityjson?ie=utf-8';
-  const config = {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json;charset=UTF-8',
+var country;
+var city;
+
+function getGeoLocationData() {
+  var request = new XMLHttpRequest();
+
+  request.open('GET', 'https://api.ipdata.co/?api-key=a012e743706629a1aa026278540e347a91cd53ede971cb6f2059f2e3');
+
+  request.setRequestHeader('Accept', 'application/json');
+
+  request.onreadystatechange = function () {
+    if (this.readyState === 4) {
+      var jsonString = this.responseText;
+      // 解析 JSON 字符串为 JavaScript 对象
+      var jsonObject = JSON.parse(jsonString);
+
+      // 提取 "country_name" 和 "city" 的值
+      country = jsonObject.country_name;
+      city = jsonObject.city;
+
+      // 输出结果
+      // console.log('Country Name:', countryName);
+      // console.log('City:', city);
     }
-  }
-  // 发起Fetch请求
-  fetch(apiUrl, config)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json(); // 解析返回的JSON数据
-    })
-    .then(data => {
-      // 处理返回的数据
-      console.log(data);
-    })
-    .catch(error => {
-      console.error('Fetch error:', error);
-    });
-}
+  };
 
-// 阅读按钮选中/未选
-function toggleCheckBackground() {
-  var checkDiv = document.getElementById('check');
-
-  // 获取当前背景颜色
-  var currentColor = window.getComputedStyle(checkDiv).getPropertyValue('background-color');
-
-  // 切换背景颜色
-  checkDiv.style.backgroundColor = (currentColor === 'rgba(0, 0, 0, 0)' || currentColor === 'transparent') ? '#9e56ff' : 'transparent';
+  request.send();
 }
 
 // 元素加载完后立刻执行
@@ -334,6 +328,17 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector('.icon').addEventListener('click', toggleOptions);
 
   var checkAgree = document.getElementById('check');
+  // 阅读按钮选中/未选
+  function toggleCheckBackground() {
+    var checkDiv = document.getElementById('check');
+
+    // 获取当前背景颜色
+    var currentColor = window.getComputedStyle(checkDiv).getPropertyValue('background-color');
+
+    // 切换背景颜色
+    checkDiv.style.backgroundColor = (currentColor === 'rgba(0, 0, 0, 0)' || currentColor === 'transparent') ? '#9e56ff' : 'transparent';
+  }
+
 
   // 添加点击事件监听器
   checkAgree.addEventListener('click', function () {
@@ -437,7 +442,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 添加点击事件监听器
   verifyGet.addEventListener('click', function (event) {
-    console.log("验证码获取");
+    // console.log("验证码获取");
     event.preventDefault(); // 阻止默认的链接点击行为
     generateOrRetrieveCode();
   });
@@ -475,15 +480,20 @@ document.addEventListener("DOMContentLoaded", function () {
         if (storedCodeData.code == enteredCode && withinTimeLimit(storedCodeData.timestamp, 60)) {
           // 密码检验
           if (password == password_check) {
+            // console.log("Test:" + country);
             accountData[mobile_countrry_code + phoneNumber] = {
-              password: password
+              password: password,
+              country: country,
+              city: city
             }
-			sessionStorage.setItem('Accounts', JSON.stringify(accountData));
-			// 本地存储
-			localAccountData[mobile_countrry_code + phoneNumber] = {
-              password: password
+            sessionStorage.setItem('Accounts', JSON.stringify(accountData));
+            // 本地存储
+            localAccountData[mobile_countrry_code + phoneNumber] = {
+              password: password,
+              country: country,
+              city: city
             }
-			localStorage.setItem('LocalAccountData', JSON.stringify(localAccountData));
+            localStorage.setItem('LocalAccountData', JSON.stringify(localAccountData));
             alert('恭喜你注册成功！');
             // 重定向到 登录 页面
             window.location.href = 'login.html';
@@ -505,7 +515,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 添加点击事件监听器
   registerBtnAnchor.addEventListener('click', function () {
-    console.log("验证码验证");
+    // console.log("验证码验证");
     verifyCode();
   });
 
@@ -514,8 +524,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 调用获取用户位置并执行后续操作的函数
   fetchUserLocation();
-
+  // console.log("坐标： "+coords);
   // IP 地址获取
-  // getIpAndAddressSohu();
+  getGeoLocationData();
 
 });

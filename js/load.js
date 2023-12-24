@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", function () {
     var load_timer = setInterval(function () {
       loaderContainer.style.display = 'none';
+	  var BGMPlayer = document.querySelector(".BGM-container");
+	  BGMPlayer.style.display = 'flex';
     }, 2000);
   });
 });

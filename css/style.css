@@ -64,6 +64,46 @@ body {
     width: 100%;
   }
 }
+/* BGM 播放栏 */
+.BGM-container {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: center;
+  width: 20%;
+  height: 10vw;
+  z-index: 10000;
+  background: linear-gradient(to bottom right, rgba(158, 86, 255, 0.67), rgba(255, 255, 204, 0.67));
+  border-top-right-radius: 5vw;
+  border-bottom-right-radius: 5vw;
+  display: none;
+}
+
+.BGM-left {
+  width: 80%;
+  text-align: center;
+  margin-right: 5%;
+}
+
+.BGM-left img {
+  max-width: 100%;
+  height: auto;
+}
+
+.BGM-right {
+  width: 20%;
+  text-align: center;
+  margin-right: 5%;
+}
+
+.BGM-right img {
+  max-width: 100%;
+  height: 40%; /* 父元素高度的40% */
+  vertical-align: middle;
+}
+
+/* 头部导航栏 */
 .header {
   height: 100px;
   line-height: 100px;
@@ -156,7 +196,7 @@ body {
 @media (max-width : 992px) {
   .header {
     height: 40px;
-	width: 100%;
+    width: 100%;
     line-height: 40px;
     display: flex;
     justify-content: flex-start;
@@ -264,6 +304,7 @@ body {
   position: absolute;
   left: 0;
   z-index: 1;
+  display: none;
 }
 .slideshow-container div {
   position: absolute;
@@ -817,8 +858,8 @@ body {
     width: 28%;
     height: 120px;
     position: relative;
-	margin-left: 5%;
-	margin-bottom: 8%;
+    margin-left: 5%;
+    margin-bottom: 8%;
   }
   .dis_center ul li img {
     width: 90%;
